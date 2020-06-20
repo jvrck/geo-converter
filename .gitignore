@@ -1,3 +1,9 @@
 .DS_Store
+
+# jvrck local testing 
 datafile
-sample-data
+
+# sample-data directory
+# only ighore extracted shape files
+sample-data/*
+!sample-data/*.zip
