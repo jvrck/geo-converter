@@ -4,6 +4,7 @@
 datafile
 
 # sample-data directory
-# only ighore extracted shape files
+# ignore extracted shape files 
+# but not zip files that contain shape files 
 sample-data/*
 !sample-data/*.zip
