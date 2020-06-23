@@ -1,5 +1,5 @@
-echo "++++ convert.sh ++++"
 #!/bin/sh
+echo "++++ convert.sh ++++"
 
 cd /data
 mkdir -p output
