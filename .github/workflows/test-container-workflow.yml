@@ -14,3 +14,5 @@ jobs:
           run: docker build . --file Dockerfile -t shape2open:test
         - name: Run Tests on Image
           run: docker run --entrypoint '/app/test.sh' -v $PWD/sample-data/:/data shape2open:test 
+        - name: Check Test Files
+          run: ls -la sample-data/
