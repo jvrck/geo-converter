@@ -11,4 +11,5 @@ jobs:
           uses: actions/checkout@v2
 
         - name: Docker Stuff
-          run: docker build . --file Dockerfile
+          run: docker build . --file Dockerfile -t shape2open:test
+          run: docker run --entrypoint '/app/test.sh' -v $PWD/sample-data/:/data shape2open:test 
