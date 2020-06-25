@@ -10,6 +10,7 @@ jobs:
         - name: Checkout code
           uses: actions/checkout@v2
 
-        - name: Docker Stuff
+        - name: Build Image
           run: docker build . --file Dockerfile -t shape2open:test
+        - name: Run Tests on Image
           run: docker run --entrypoint '/app/test.sh' -v $PWD/sample-data/:/data shape2open:test 
