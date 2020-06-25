@@ -15,5 +15,5 @@ jobs:
         - name: Run Tests on Image
           run: docker run --entrypoint '/app/test.sh' -v $PWD/sample-data/:/data shape2open:test 
         - name: Check Test Files
-          run: '(test -d sample-dataa/ && echo Directory sample-data/ exists.) || echo Error: Directory sample-data/ does not exists.'
+          run: '(test -d sample-dataa/ && echo Directory sample-data/ exists.) || echo Error: Directory sample-data/ does not exists. && exit 1'
 
