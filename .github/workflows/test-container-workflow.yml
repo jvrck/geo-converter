@@ -15,6 +15,3 @@ jobs:
 
         - name: Run Tests on Image
           run: docker run --entrypoint '/app/test.sh' -v $PWD/sample-data/:/data jvrck/shape2open:testing
-
-        - name: Check Output Directory
-          run: '(test -d sample-data/output && echo Directory sample-data/output exists. || echo Error: Directory sample-data/output does not exists. && exit 1)'
