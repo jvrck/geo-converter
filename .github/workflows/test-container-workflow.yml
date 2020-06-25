@@ -1,0 +1,14 @@
+name: Test Container
+on:
+  push:
+
+jobs:
+  Test-Container:
+    runs-on: ubuntu-latest
+
+    steps:
+        - name: Checkout code
+          uses: actions/checkout@v2
+
+        - name: Docker Stuff
+          run: docker build . --file Dockerfile
