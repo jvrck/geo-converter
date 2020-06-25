@@ -1,4 +1,4 @@
-name: Test Container
+name: Test Container Build
 on:
   push:
 
@@ -11,9 +11,10 @@ jobs:
           uses: actions/checkout@v2
 
         - name: Build Image
-          run: docker build . --file Dockerfile -t shape2open:test
-        - name: Run Tests on Image
-          run: docker run --entrypoint '/app/test.sh' -v $PWD/sample-data/:/data shape2open:test 
-        - name: Check Test Files
-          run: '(test -d sample-data/ && echo Directory sample-data/ exists.) || echo Error: Directory sample-data/ does not exists. && exit 1'
+          run: docker build . --file Dockerfile -t jvrck/shape2open:testing
 
+        - name: Run Tests on Image
+          run: docker run --entrypoint '/app/test.sh' -v $PWD/sample-data/:/data jvrck/shape2open:testing
+
+        - name: Check Output Directory
+          run: '(test -d sample-data/output && echo Directory sample-data/output exists. || echo Error: Directory sample-data/output does not exists. && exit 1)'
