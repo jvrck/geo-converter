@@ -16,7 +16,8 @@ convert_file () {
 }
 
 # Process directories in /data
-for d in */ ; do
+for d in *.zip; do
+    echo $d
     if [ "$d" != "output/" ]; then 
         cd $d
         for f in *.shp; do
@@ -28,5 +29,6 @@ done
 
 # Process files in /data
 for f in *.shp; do
+    echo $f
     convert_file $f
 done
