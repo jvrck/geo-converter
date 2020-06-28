@@ -23,7 +23,7 @@ for d in *.zip; do
         for f in *.shp; do
             convert_file $f
         done
-        cd ..
+        cd /data
     fi
 done
 
