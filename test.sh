@@ -4,8 +4,6 @@ echo "++++ test.sh ++++"
 
 cd /data
 
-ls -la
-
 # Process files in /data
 # Unzip shape files
 for f in *.zip; do
