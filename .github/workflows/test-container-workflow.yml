@@ -1,6 +1,9 @@
 name: Test Container Build
 on:
   push:
+    branches:
+      - '*'
+      - '!master'
 
 jobs:
   Test-Container:
