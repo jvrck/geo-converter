@@ -1,0 +1,18 @@
+name: Publish to Docker Hub
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: build-and-push
+        uses: docker/build-push-action@v1
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+          repository: jvrck/shape2open
+          tag_with_ref: true
+          push: ${{ startsWith(github.ref, 'refs/tags/') }}
